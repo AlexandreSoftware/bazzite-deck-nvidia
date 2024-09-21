@@ -19,7 +19,7 @@ curl -L https://copr.fedorainfracloud.org/coprs/gloriouseggroll/nobara-40/repo/f
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 rpm-ostree install gamescope gamescope-session-plus gamescope-session-steam gamescope-htpc-common
-
+sed "205,1s/^/export LD_PRELOAD='~\/CustomSteamPrerunScript.so'/" /usr/bin/steam > /usr/bin/steam
 
 #### Example for enabling a System Unit File
 
