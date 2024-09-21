@@ -15,8 +15,11 @@ RELEASE="$(rpm -E %fedora)"
 # this installs a package from fedora repos
 rpm-ostree install screen
 
+ostree remote add nobara-repos https://copr.fedorainfracloud.org/coprs/gloriouseggroll/nobara-40/repo/fedora-40/gloriouseggroll-nobara-40-fedora-40.repo
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
+rpm-ostree install gamescope gamescope-session-plus gamescope-session-steam gamescope-htpc-common
+
 
 #### Example for enabling a System Unit File
 
