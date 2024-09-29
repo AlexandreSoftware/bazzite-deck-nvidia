@@ -59,41 +59,6 @@ RUN sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/_copr_ublue-os-akmods.repo
     /usr/libexec/containerbuild/cleanup.sh && \
     ostree container commit
 
-RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
-    rpm-ostree install \
-    jupiter-fan-control \
-    jupiter-hw-support-btrfs \
-    steamdeck-dsp \
-    powerbuttond \
-    hhd \
-    hhd-ui \
-    adjustor \
-    acpica-tools \
-    vpower \
-    ds-inhibit \
-    steam_notif_daemon \
-    sdgyrodsu \
-    ibus-pinyin \
-    ibus-table-chinese-cangjie \
-    ibus-table-chinese-quick \
-    socat \
-    zstd \
-    zenity \
-    newt \
-    qt6-qtvirtualkeyboard \
-    xorg-x11-server-Xvfb \
-    python-vdf \
-    python-crcmod && \
-    git clone https://gitlab.com/evlaV/jupiter-dock-updater-bin.git \
-        --depth 1 \
-        /tmp/jupiter-dock-updater-bin && \
-    mv -v /tmp/jupiter-dock-updater-bin/packaged/usr/lib/jupiter-dock-updater /usr/libexec/jupiter-dock-updater && \
-    rm -rf /tmp/jupiter-dock-updater-bin && \
-    ln -s /usr/bin/steamos-logger /usr/bin/steamos-info && \
-    ln -s /usr/bin/steamos-logger /usr/bin/steamos-notice && \
-    ln -s /usr/bin/steamos-logger /usr/bin/steamos-warning && \
-    /usr/libexec/containerbuild/cleanup.sh && \
-    ostree container commit
 
 RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
     mkdir -p /usr/share/gamescope-session-plus/ && \
